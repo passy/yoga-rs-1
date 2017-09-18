@@ -15,7 +15,6 @@ fn main() {
 	c.compile("libyoga.a");
 
 	let bindings = bindgen::Builder::default()
-		.no_unstable_rust()
 		.hide_type("max_align_t") // This fails `cargo test` so disable for now
 		.hide_type("FP_INFINITE")
 		.hide_type("FP_NAN")
