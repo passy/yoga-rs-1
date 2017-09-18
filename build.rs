@@ -17,6 +17,11 @@ fn main() {
 	let bindings = bindgen::Builder::default()
 		.no_unstable_rust()
 		.hide_type("max_align_t") // This fails `cargo test` so disable for now
+		.hide_type("FP_INFINITE")
+		.hide_type("FP_NAN")
+		.hide_type("FP_NORMAL")
+		.hide_type("FP_SUBNORMAL")
+		.hide_type("FP_ZERO")
 		.header("src/c/wrapper.h")
 		.generate()
 		.expect("Unable to generate bindings");
